@@ -17,7 +17,7 @@ function D = find_mdp(A,F)
 %
 % References:
 %
-%   [1] J. Gao, Y.-Y. Liu, R. M. D’Souza, A.-L. Barabasi. Target control 
+%   [1] J. Gao, Y.-Y. Liu, R. M. Dâ€™Souza, A.-L. Barabasi. Target control 
 %       of complex networks. Nature Communications, 5:5415 (2014).
 %   [2] A. N. Montanari, C. Duan, Adilson E. Motter. Target controllability
 %       and target observability of networks. Under review (2023).
@@ -82,7 +82,7 @@ while ~isempty(BipG.R)
     BipG.R = matched_edges(matched_edges ~= 0);
     
     % Breaks cycles of less than 100 nodes
-    loopsize = 5;
+    loopsize = 20;
     if iter > loopsize && sum(p(iter+1) == p(iter-loopsize:iter)) == loopsize + 1
         aux = mod(iter,100)+1;
         cycles(aux,:) = zeros(1,n);
