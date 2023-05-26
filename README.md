@@ -22,7 +22,7 @@ The following codes are design algorithms of static feedback controllers (for ta
 
 
 
-The following examples illustrate numerical results of the algorithms described above for a small numerical examples as well as complex networks like the *C. elegans* neuronal network.
+The following examples illustrate numerical results of the algorithms described above for small network systems as well as complex networks like the *C. elegans* neuronal network.
 
 - `main_optimalplacement` : Examples of minimum driver placement for target controllability and minimum sensor placement for target observability applied to a low-dimensional network system and to the C. elegans neuronal network.
 
