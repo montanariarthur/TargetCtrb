@@ -12,24 +12,21 @@ The following codes are direct implementations of the algorithms for minimum sen
 
 
 
-The following codes are design algorithms of functional observers (for target estimation applications) and static feedback controllers (for target control applications).
+The following codes are design algorithms of static feedback controllers (for target control applications) and functional observers (for target estimation applications).
 
-- `find_F0` : Finds F0 with minimum-order such that Darouach's condition (4) in Ref. [3] is satisfied for a triple (A,C,F0). This is the first step in the design of a functional observer. This is a MATLAB implementation of Algorithm 2 in Ref. [2].
+- `targetcontrol_design` : Designs the static feedback control law u = Kx for target control of z=Fx via partial pole placement.
 
-- `functobsv_design` : Designs the functional observer's matrices (N,J,H,D,E) in Eq. (10) of Ref. [2]. The design method is guaranteed to provide a stable functional observer if the triple (A,C,F0) satisfies conditions (4-5) in Ref. [2].
+- `find_F0` : Finds F0 with minimum-order such that Darouach's condition (4) in Ref. [3] is satisfied for a triple (A,C;F0). This is the first step in the design of a functional observer. This is a MATLAB implementation of Algorithm 2 in Ref. [2].
 
+- `functobsv_design` : Designs the functional observer's matrices (N,J,H,D,E) in Eq. (10) of Ref. [2]. The design method is guaranteed to provide a stable functional observer if the triple (A,C,F0) satisfies conditions (3-5) in Ref. [2].
 
 
 
 The following examples illustrate numerical results of the algorithms described above for a small numerical examples as well as complex networks like the *C. elegans* neuronal network.
 
-- `example_dynamicalnetwork` : Example of minimum sensor placement and minimum-order functional observer design for a random complex dynamical networks. This code examplifies how to:
-    1. apply Algorithm 1 to determine the minimum set of sensor nodes for functional observability of a dynamical network with respect to a given set of target nodes; and
-    2. apply Algorithm 2 to design a minimum-order functional observer.
+- `main_optimalplacement` : Examples of minimum driver placement for target controllability and minimum sensor placement for target observability applied to a low-dimensional network system and to the C. elegans neuronal network.
 
-- `example_cyberdetection` : Example of cyber-attack detection in power grids using functional observers and target state estimation.
-
-- `example_epidemicspreading` : Example of sensor placement and nonlinear functional observer design for estimating the prevalence rate of infection in target populations following an epidemic outbreak.
+- `main_targetcontrol` : Example of target control for a target controllable system (A,B;F) and target estimation for a target observable system (C,A;K). This code illustrates the separation principle in the design procedures of static feedback controllers (for target control) and functional observers (for target estimation).
 
 
 
@@ -38,6 +35,7 @@ The above codes are dependent on the following codes and datasets:
 
 - `spnull`,`sporth` :  Computes a sparse orthonormal basis for the null space and the range space of a matrix, respectively.
 - `maxmatch` : Finds the maximum matching of a bipartite graph.
+- `closedloopsys` : Ordinary differential equations for a closed-loop system with functional observer-based feedback.
 - `celegans.mat` : Adjacency matrix of the *C. elegans* neuronal network.
 
 
