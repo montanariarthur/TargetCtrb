@@ -83,8 +83,8 @@ Phi = -F2*A22*F2ortho;
 % Eqs. 3.53b and 3.53c in Ref. [3]
 Omegapinv = sparse(pinv(full(Omega)));
 F2pinv = sparse(pinv(full(F2)));
-N1 = (Phi*Omegapinv*A12 + F2*A22)*F2pinv
-N2 = (Omega*Omegapinv - speye(q))*A12*F2pinv
+N1 = (Phi*Omegapinv*A12 + F2*A22)*F2pinv;
+N2 = (Omega*Omegapinv - speye(q))*A12*F2pinv;
 
 %% Step 3: Determine Z such that N (Eq. 3.53a, Ref. [3]) is stable.
 % Optimal pole placement method: LQR
@@ -95,7 +95,7 @@ if nargin < 5
 end
 Q = Qgain*speye(r); 
 R = Rgain*speye(size(N2',2));
-Z = sparse(lqr(full(N1'+alpha*speye(r)),full(N2'),full(Q),full(R))')
+Z = sparse(lqr(full(N1'+alpha*speye(r)),full(N2'),full(Q),full(R))');
 
 N = N1 - Z*N2;
 
