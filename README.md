@@ -24,7 +24,7 @@ The following codes are design algorithms of static feedback controllers (for ta
 
 The following examples illustrate numerical results of the algorithms described above for small network systems as well as complex networks like the *C. elegans* neuronal network.
 
-- `main_optimalplacement` : Examples of minimum driver placement for target controllability and minimum sensor placement for target observability applied to a low-dimensional network system and to the C. elegans neuronal network.
+- `main_optimalplacement` : Examples of minimum driver placement for target controllability and minimum sensor placement for target observability applied to a low-dimensional network system and to the *C. elegans* neuronal network. These examples are discussed in Ref. [1].
 
 - `main_targetcontrol` : Example of target control for a target controllable system (A,B;F) and target estimation for a target observable system (C,A;K). This code illustrates the separation principle in the design procedures of static feedback controllers (for target control) and functional observers (for target estimation).
 
