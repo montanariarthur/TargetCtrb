@@ -17,7 +17,7 @@ function [MATE] = maxmatch(adj2)
 %  3   5 0 0
 %   we assume no isolated vertices and un-directed graph (symmetric ADJ)
 
-% Code available at:
+% Code originally available at:
 % Sergii Iglin (2023). Graph Theory Toolbox 
 % (https://www.mathworks.com/matlabcentral/fileexchange/90341-graph-theory-toolbox), 
 % MATLAB Central File Exchange. Retrieved May 25, 2023.
