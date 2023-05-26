@@ -17,6 +17,7 @@
 %       of complex networks. Nature Communications, 5:5415 (2014).
 %   [3] A. N. Montanari, C. Duan, L. A. Aguirre, A. E. Motter. Functional
 %       observability and target state estimation in large-scale networks.
+%       Proceedings of the National Academy of Sciences 119:e2113750119 (2022).
 
 % Copyright (C) 2023  Arthur Montanari
 % 
