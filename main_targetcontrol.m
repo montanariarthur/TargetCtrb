@@ -102,31 +102,8 @@ end
 
 %% Design static feedback controller for target control.
 if isSD == 1
-    % System decomposition
-    [V,lambda,W] = eig(A);
-    lambda = diag(lambda);
-
-    [Abar,Bbar,Cbar,P,k] = ctrbf(A,B,C);
-    Fbar = F*P';
-    nc = sum(k);
-    nu = n - nc;
-
-    [Vbar,lambdabar,Wbar] = eig(Abar);
-    
-    % Controllable and uncontrollable subsystems
-    Ac = Abar(nu+1:n,nu+1:n);   Au = Abar(1:nu,1:nu);
-    Bc = Bbar(nu+1:n,:);        Bu = Bbar(1:nu,:);
-    Cc = Cbar(:,nu+1:n);        Cu = Cbar(:,1:nu);
-    Fc = Fbar(:,nu+1:n);        Fu = Fbar(:,1:nu);
-
-    Q = F'*inv(F*F')*F;
-    QW = Q*W;
-
-    % Partial pole placement to position {-4,-5,-6}
-    Kc = place(Ac,Bc,[-4 -5 -6]);
-    Ku = zeros(size(Kc,1),nu);
-    Kbar = [Ku Kc];
-    K = Kbar*P                 % feedback matrix
+    poles = [-4 -5 -6];     % desired (partial) pole placement
+    K = targetcontrol_design(A,B,C,F,poles)
     disp('Design of the static feedback controller is concluded. Target control is enabled with u(t) = -K*x(t).')
 else
     error('Strong duality does not hold for (A,B;F). Target control of z = F*x is not possible via static feedback.')
@@ -169,6 +146,8 @@ else
 end 
 
 % Darouach condition 2
+[V,lambda,W] = eig(A);
+lambda = diag(lambda);
 for i = 1:n
     Darouach2(i) = (rank([lambda(i)*(K0) - (K0)*A; C*A; C]) == rank([C*A; C; K0]));
 end
@@ -192,6 +171,7 @@ end
 % Design of functional observer matrices
 fobsv = [];
 [fobsv.N,fobsv.J,fobsv.H,fobsv.D,fobsv.E,fobsv.T] = functobsv_design(A,C,K0,B);
+fobsv
 
 
 % The solutions below must be zero (or numerically close to zero) to
