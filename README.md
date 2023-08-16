@@ -40,7 +40,7 @@ The above codes are dependent on the following functions and datasets:
 
 
 # References
-1. A. N. Montanari, C. Duan, A. E. Motter. Target controllability and target observability of structured network systems. *IEEE Control Systems Letters* 7:3060-3065 (2023).
+1. A. N. Montanari, C. Duan, A. E. Motter. Target controllability and target observability of structured network systems. *IEEE Control Systems Letters* 7:3060-3065 (**2023**). https://doi.org/10.1109/LCSYS.2023.3289827
 2. A. N. Montanari, C. Duan, L. A. Aguirre, A. E. Motter. Functional observability and target state estimation in large-scale networks. *Proceedings of the National Academy of Sciences* 119(1):e2113750119 (**2022**). 
 https://doi.org/10.1073/pnas.2113750119
 3. J. Gao, YY. Liu , R. D'Souza, AL. Barabási. Target control of complex networks. *Nature Communications* 5, 5415 (**2014**). https://doi.org/10.1038/ncomms6415
