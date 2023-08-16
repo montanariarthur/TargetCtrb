@@ -20,7 +20,8 @@ function D = find_mdp(A,F)
 %   [1] J. Gao, Y.-Y. Liu, R. M. D’Souza, A.-L. Barabasi. Target control 
 %       of complex networks. Nature Communications, 5:5415 (2014).
 %   [2] A. N. Montanari, C. Duan, Adilson E. Motter. Target controllability
-%       and target observability of networks. Under review (2023).
+%       and target observability of structured network systems.
+%       IEEE Control Systems Letters, 7:3060-3065 (2023).
 
 % Copyright (C) 2021  Arthur Montanari
 % 
